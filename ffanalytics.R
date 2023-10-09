@@ -3,15 +3,58 @@ if (!require(remotes))
 	
 remotes::install_github("FantasyFootballAnalytics/ffanalytics")
 
-possible_season_sources <- c("CBS", "ESPN", "FantasyPros", "FantasySharks", "FFToday", "NumberFire", "FantasyFootballNerd", "NFL", "RTSports", "Walterfootball")
-possible_week_sources <- c("CBS", "ESPN", "FantasyPros", "FantasySharks", "FFToday", "FleaFlicker", "NumberFire", "FantasyFootballNerd", "NFL")
-possible_position_sources <- c("QB", "RB", "WR", "TE", "DST")
+possible_season_sources <- c(
+	"CBS",
+	"ESPN",
+	"FantasyPros",
+	"FantasySharks",
+	"FFToday",
+	"NumberFire",
+	"FantasyFootballNerd",
+	"NFL",
+	"RTSports",
+	"Walterfootball"
+)
+possible_week_sources <- c(
+	"CBS",
+	"ESPN",
+	"FantasyPros",
+	"FantasySharks",
+	"FFToday",
+	"FleaFlicker",
+	"NumberFire",
+	"FantasyFootballNerd",
+	"NFL"
+)
+possible_position_sources <- c(
+	"QB",
+	"RB",
+	"WR",
+	"TE",
+	"DST"
+)
 
-scrape_ffanalytics <- function(season, week, sources, positions) {
-	ffanalytics::scrape_data(season = season, week = week, src = sources, pos = position)
+scrape_ffanalytics <- function(
+	sources,
+	positions,
+	season = NULL,
+	week = NULL
+) {
+	ffanalytics::scrape_data(
+		src = sources,
+		pos = position,
+		season = season,
+		week = week
+	)
 }
 
-projections_ffanaytics <- function(scrape_data, include_ecr = FALSE, include_adp = FALSE, include_aav = FALSE, include_uncertainty = FALSE) {
+projections_ffanaytics <- function(
+	scrape_data,
+	include_ecr = FALSE,
+	include_adp = FALSE,
+	include_aav = FALSE,
+	include_uncertainty = FALSE
+) {
 	projections <- ffanalytics::projects_table(scrape_data)
 	
 	if (include_ecr) {
