@@ -47,7 +47,7 @@ scrape_ffanalytics <- function(
 ) {
   ffanalytics::scrape_data(
     src = sources,
-    pos = position,
+    pos = positions,
     season = season,
     week = week
   )
