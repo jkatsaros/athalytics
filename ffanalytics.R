@@ -1,5 +1,10 @@
 if (!require(remotes))
     install.packages("remotes", repos = "http://cran.us.r-project.org")
+if (!require(tidyverse))
+    install.packages("tidyverse", repos = "http://cran.us.r-project.org")
+
+library(remotes)
+library(tidyverse)
 
 remotes::install_github("FantasyFootballAnalytics/ffanalytics")
 
