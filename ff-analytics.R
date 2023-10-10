@@ -2,9 +2,12 @@ if (!require(remotes))
   install.packages("remotes", repos = "http://cran.us.r-project.org")
 if (!require(tidyverse))
   install.packages("tidyverse", repos = "http://cran.us.r-project.org")
+if (!require(lubridate))
+  install.packages("lubridate", repos = "http://cran.us.r-project.org")
 
 library(remotes)
 library(tidyverse)
+library(lubridate)
 
 remotes::install_github("FantasyFootballAnalytics/ffanalytics")
 
@@ -40,11 +43,41 @@ possible_position_sources <- c(
 )
 
 scrape_ffanalytics <- function(
-  sources,
-  positions,
+  sources = NULL,
+  positions = NULL,
   season = NULL,
   week = NULL
 ) {
+  if (sources == NULL) {
+    if (week != NULL) {
+      sources <- possible_week_sources
+    } else {
+      sources <- possible_season_sources
+    }
+  }
+  
+  if (positions == NULL) {
+    positions <- possible_position_sources
+  }
+  
+  if (week != NULL) {
+    if (!any(sources %in% possible_week_sources)) {
+      warning("At least one of the provided 'source(s)' is/are invalid.")
+    }
+  } else {
+    if (!any(sources %in% possible_season_sources)) {
+      warning("At least one of the provided 'source(s)' is/are invalid.")
+    }
+  }
+  
+  if (!any(positions %in% possible_position_sources)) {
+    warning("At least one of the provided 'position(s)' is/are invalid.")
+  }
+  
+  if (year(season) > year(now())) {
+    warning("The provided 'season' is invalid.")
+  }
+  
   ffanalytics::scrape_data(
     src = sources,
     pos = positions,
@@ -60,6 +93,10 @@ projections_ffanaytics <- function(
   include_aav = FALSE,
   include_uncertainty = FALSE
 ) {
+  if (!is.list(scrape_data)) {
+    warning("The provided 'scrape_data' is invalid.")
+  }
+  
   projections <- ffanalytics::projects_table(scrape_data)
 
   if (include_ecr) {
