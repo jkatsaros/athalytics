@@ -1,0 +1,11 @@
+Package: athalytics
+Title: Analytics for fantasy sports
+Version: 1.0.0
+Authors@R:
+    c(person(given = "Jason",
+             family = "Katsaros",
+             role = c("aut", "cre"),
+             email = "katsarjp@tutanota.com"))
+Description: Analytics for fantasy sports.
+Imports: plumber, shiny, remotes, tidyverse, glue, lubridate, testthat, callthat
+License: MIT
