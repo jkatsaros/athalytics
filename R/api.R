@@ -1,9 +1,12 @@
 if (!require(plumber))
   install.packages("plumber", repos = "http://cran.us.r-project.org")
+if (!require(here))
+  install.packages("here", repos = "http://cran.us.r-project.org")
 
 library(plumber)
+library(here)
 
-source("./football-api.R")
+source(here::here("football-api.R"))
 
 pr() %>%
   pr_get(

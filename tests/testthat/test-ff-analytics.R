@@ -4,12 +4,14 @@ if (!require(glue))
   install.packages("glue", repos = "http://cran.us.r-project.org")
 if (!require(lubridate))
   install.packages("lubridate", repos = "http://cran.us.r-project.org")
+if (!require(here))
+  install.packages("here", repos = "http://cran.us.r-project.org")
 
 library(testthat)
 library(glue)
 library(lubridate)
 
-source("../../R/ff-analytics.R")
+source(here::here("../../R/ff-analytics.R"))
 
 test_that("'scrape_ffanalytics' produces an error when the 'season' parameter is not a number", {
   expect_error(
