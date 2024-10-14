@@ -3,7 +3,7 @@ if (!require(plumber))
 
 library(plumber)
 
-source("ff-analytics.R")
+source("./ff-analytics.R")
 
 pr() %>%
   pr_get(

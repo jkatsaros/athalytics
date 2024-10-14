@@ -9,7 +9,7 @@ library(testthat)
 library(glue)
 library(lubridate)
 
-source("../../R/ffanalytics.R")
+source("../../R/ff-analytics.R")
 
 test_that("'scrape_ffanalytics' produces an error when the 'season' parameter is not a number", {
   expect_error(

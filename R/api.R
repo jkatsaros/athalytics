@@ -3,7 +3,7 @@ if (!require(plumber))
 
 library(plumber)
 
-source("football-api.R")
+source("./football-api.R")
 
 pr() %>%
   pr_get(
