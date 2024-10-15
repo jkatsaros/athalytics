@@ -10,6 +10,7 @@ if (!require(here))
 library(testthat)
 library(glue)
 library(lubridate)
+library(here)
 
 source(here::here("../../R/ff-analytics.R"))
 

@@ -1,5 +1,5 @@
 Package: athalytics
-Title: Analytics for fantasy sports
+Title: Athletics/Analytics
 Version: 1.0.0
 Authors@R:
     c(person(given = "Jason",
@@ -8,4 +8,4 @@ Authors@R:
              email = "katsarjp@tutanota.com"))
 Description: Analytics for fantasy sports.
 Imports: plumber, shiny, remotes, tidyverse, glue, lubridate, here, testthat
-License: MIT
+License: `use_mit_license()`
