@@ -1,1 +1,1 @@
-useDynLib(testpackage, .registration = TRUE)
+useDynLib(athalytics, .registration = TRUE)
