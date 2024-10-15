@@ -6,7 +6,7 @@ if (!require(here))
 library(plumber)
 library(here)
 
-source(here::here("ff-analytics.R"))
+source(here::here("R", "ff-analytics.R"))
 
 pr() %>%
   pr_get(

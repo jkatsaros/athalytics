@@ -12,5 +12,5 @@ pr() %>%
     handler = function() { "Healthy." },
     responses = list("200" = list(description = "Health check."))
   ) %>%
-  pr_mount("/football", plumb(here::here("football-api.R"))) %>%
+  pr_mount("/football", plumb(here::here("R", "football-api.R"))) %>%
   pr_run()
