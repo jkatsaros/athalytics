@@ -1,4 +1,4 @@
-if (!require(remotes))
+if (!require(devtools))
   install.packages("remotes", repos = "http://cran.us.r-project.org")
 if (!require(tidyverse))
   install.packages("tidyverse", repos = "http://cran.us.r-project.org")
@@ -12,7 +12,7 @@ library(tidyverse)
 library(glue)
 library(lubridate)
 
-remotes::install_github("FantasyFootballAnalytics/ffanalytics")
+devtools::install_github("FantasyFootballAnalytics/ffanalytics")
 
 possible_season_sources <- c(
   "CBS",

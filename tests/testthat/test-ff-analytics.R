@@ -12,7 +12,7 @@ library(glue)
 library(lubridate)
 library(here)
 
-source(here::here("../../R/ff-analytics.R"))
+source(here::here("R", "ff-analytics.R"))
 
 test_that("'scrape_ffanalytics' produces an error when the 'season' parameter is not a number", {
   expect_error(

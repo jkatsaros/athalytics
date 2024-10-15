@@ -7,5 +7,5 @@ Authors@R:
              role = c("aut", "cre"),
              email = "katsarjp@tutanota.com"))
 Description: Analytics for fantasy sports.
-Imports: plumber, shiny, remotes, tidyverse, glue, lubridate, here, testthat
+Imports: plumber, shiny, devtools, tidyverse, glue, lubridate, here, testthat
 License: `use_mit_license()`
