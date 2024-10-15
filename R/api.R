@@ -9,6 +9,7 @@ library(here)
 pr() %>%
   pr_get(
     path = "/",
+    handler = function() { "Healthy." },
     responses = list("200" = list(description = "Health check."))
   ) %>%
   pr_mount("/football", plumb(here::here("football-api.R"))) %>%

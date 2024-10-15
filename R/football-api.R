@@ -11,6 +11,7 @@ source(here::here("ff-analytics.R"))
 pr() %>%
   pr_get(
     path = "/",
+    handler = function() { "Healthy." },
     responses = list("200" = list(description = "Health check."))
   ) %>%
   pr_get(
