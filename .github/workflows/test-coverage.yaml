@@ -24,10 +24,9 @@ jobs:
 
       - name: Test coverage
         run: |
-          covr::codecov(
-            quiet = FALSE,
-            clean = FALSE,
-            install_path = file.path(Sys.getenv("RUNNER_TEMP"), "package")
+          covr::code_coverage(
+            file.path(Sys.getenv("RUNNER_TEMP"), "R", "ff-analytics.R")
+            file.path(Sys.getenv("RUNNER_TEMP"), "tests", "testthat", "test-ff-analytics.R")
           )
         shell: Rscript {0}
 
