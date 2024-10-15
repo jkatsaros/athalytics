@@ -8,4 +8,5 @@ Authors@R:
              email = "katsarjp@tutanota.com"))
 Description: Analytics for fantasy sports.
 Imports: plumber, shiny, devtools, tidyverse, glue, lubridate, here, testthat
+Remotes: github::FantasyFootballAnalytics/ffanalytics
 License: `use_mit_license()`
